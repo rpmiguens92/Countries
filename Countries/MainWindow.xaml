@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countries"
+        xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="Countries.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="655" Width="1032">
+
+    <Grid Margin="0,-27,-66,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0.986"/>
+                <GradientStop Color="#FF99D965" Offset="0.923"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ListBox x:Name="country_list" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="38,72,835,139" Background="{x:Null}" SelectionChanged="country_list_SelectionChanged"/>
+        <Image x:Name="img_flag" HorizontalAlignment="Left" Height="169" Margin="633,122,0,0" VerticalAlignment="Top" Width="291"/>
+        <Label x:Name="lbl_title" Content="    Países" HorizontalAlignment="Left" Margin="372,35,0,0" VerticalAlignment="Top" Width="181" FontWeight="Bold" FontSize="36" Opacity="0.9" Foreground="#FFD16016" FontFamily="Candara"/>
+        <ProgressBar x:Name="ProgressBar1" HorizontalAlignment="Left" Height="17" Margin="38,597,0,0" VerticalAlignment="Top" Width="117" Foreground="#FFB7971A"/>
+        <Label  x:Name="lbl_country" Content="País:" HorizontalAlignment="Left" Margin="309,102,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_box_country" HorizontalAlignment="Left" Margin="347,106,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="154" Background="{Binding OpacityMask, ElementName=txt_box_country}" />
+        <Label Content="Capital:" HorizontalAlignment="Left" Margin="309,131,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lbl_region" Content="Região:" HorizontalAlignment="Left" Margin="309,160,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lbl_subregion" Content="Sub-Região:" HorizontalAlignment="Left" Margin="309,191,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lbl_popul" Content="População:" HorizontalAlignment="Left" Margin="309,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.522,2.777"  />
+        <Label Content="Bandeira:" HorizontalAlignment="Left" Margin="638,96,0,0" VerticalAlignment="Top" Width="112" Height="31" RenderTransformOrigin="0.084,0.543"/>
+        <Label x:Name="lbl_progress" Content="Progresso:" HorizontalAlignment="Left" Height="24" Margin="38,571,0,0" VerticalAlignment="Top" Width="659"/>
+        <TextBox  x:Name="txt_box_region" HorizontalAlignment="Left" Margin="358,164,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="150" Background="{Binding OpacityMask, ElementName=txt_box_reggion}" Height="22"/>
+        <TextBox  x:Name="txt_box_subregion" HorizontalAlignment="Left" Margin="388,195,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="150" Background="{Binding OpacityMask, ElementName=txt_box_subregion}"/>
+        <TextBox  x:Name="txt_box_gini" HorizontalAlignment="Left" Margin="348,223,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="150" Background="{Binding OpacityMask, ElementName=txt_box_popul}"/>
+        <Label  x:Name="lbl_gini" Content="Gini " HorizontalAlignment="Left" Margin="309,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.522,2.777"  />
+        <TextBox  x:Name="txt_box_popul" HorizontalAlignment="Left" Margin="381,250,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="150" Background="{Binding OpacityMask, ElementName=txt_box_popul}"/>
+        <ListBox x:Name="capital_list" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="364,130,596,514" Background="{Binding OpacityMask, ElementName=listBox}"/>
+        <Wpf:WebView2 x:Name="img_maps" Margin="296,358,116,83"/>
+
+    </Grid>
+</Window>
